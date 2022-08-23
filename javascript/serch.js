@@ -15,7 +15,7 @@ NaverForm.addEventListener("submit", serchNeverSubmit);
 function serchGoogleSubmit(event){
     event.preventDefault();
     const openNewWindow = window.open("about:blank");
-    openNewWindow.location.href = `https://www.google.com/search?q=${GoogleInput.value}`;
+    openNewWindow.location.href = `https://www.youtube.com/results?search_query=${GoogleInput.value}`;
     GoogleInput.value = ""
 }
 GoogleForm.addEventListener("submit", serchGoogleSubmit);
