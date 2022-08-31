@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: 'localhost',    // 호스트 주소
-    user: 'Mysql',           // mysql user
+    host: ''%'',    // 호스트 주소
+    user: 'junan539',           // mysql user
     password: 'bird553399',       // mysql password
-    database: 'MySQL',         // mysql 데이터베이스
+    database: 'mysql',         // mysql 데이터베이스
     port: 3366
 });
 connection.connect();
