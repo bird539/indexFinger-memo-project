@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='/css/fullcalenderMain.css' rel='stylesheet'>
+    <script defer src='/javascript/fullcalenderMain.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="efect" id="efect">
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="img-line"><img src="/img/index-ex-line.png" alt=""></div>
+        <div class="img-logo"><img src="/img/indexFinger-logo.png" alt=""></div>
+
+        <div class="img-ex22"><img src="/img/line.png" alt=""></div>
+        <div class="img-ex2"><img src="/img/4.png" alt=""></div>
+        <div class="img-ex21"><img src="/img/index-ex2.png" alt=""></div>
+
+        <div class="img-ex32"><img src="/img/line.png" alt=""></div>
+        <div class="img-ex3"><img src="/img/4.png" alt=""></div>
+        <div class="img-ex31"><img src="/img/index-ex2.png" alt=""></div>
+
+        <div class="img-ex42"><img src="/img/line.png" alt=""></div>
+        <div class="img-ex4"><img src="/img/4.png" alt=""></div>
+        <div class="img-ex41"><img src="/img/index-ex2.png" alt=""></div>
+
+        <div class="img-ex52"><img src="/img/line.png" alt=""></div>
+        <div class="img-ex5"><img src="/img/4.png" alt=""></div>
+        <div class="img-ex51"><img src="/img/index-ex2.png" alt=""></div>
+    </div>
+
+
+    <div class="containerMain">
+        <div class="container_0">
+
+            <div class="container_1">
+                <!--시계-->
+                <div class="clock">
+                    <h2 id="clock">00:00:00</h2>
+                </div>
+
+                <!--달력-->
+                <div style="float: center; width: 320px;" class="FullCalender">
+                    <div id='calendar'>
+                    </div>
+                </div>
+
+                <form id="calenderForm">
+                    <input type="text" placeholder="If you don't see the calendar, put the value in one" required />
+                </form>
+                <ul id="calender-list">
+                </ul>
+            </div>
+
+            <div class="container_2">
+                <!--이름-->
+                <div class="name">
+                    <form class="hidden" id="login-form">
+                        <input required maxlength="15" type="text" placeholder="what is your name?" />
+                        <input type="submit" value="login" />
+                    </form>
+                    <h2 id="greeting" class="hidden"></h2>
+                    <button class="hidden" id="rewriteName">name rewrite</button>
+                </div>
+
+                <!--할일 메모-->
+                <h2>today your Prescripts</h2>
+                <div class="Todo">
+                    <form id="todo-form">
+                        <input type="text" placeholder="write a To do and Press Enter" required />
+                    </form>
+                    <ul id="todo-list">
+                    </ul>
+                    <button id="deletCheckAllTodo">delete checks</button>
+                    <button id="deletAllTodo">empty all</button>
+                </div>
+
+                <!--랜덤 문장-->
+                <div id="quote">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="container_3">
+                <!--타이머-->
+                <h2>timer</h2>
+                <div class="timerr">
+                    <form id="timerForm">
+                        <input type="number" id="hourTimer" name="hour" min="0" max="24" value="00"><a> :</a>
+                        <input type="number" id="minuteTimer" name="minute" min="0" max="1440" value="00"><a> :</a>
+                        <input type="number" id="secondTimer" name="second" min="0" max="86400" value="00">
+                        <input type="submit" value="start">
+                    </form>
+                    <ul id="timer-list"></ul>
+                </div>
+
+                <!--링크 메모-->
+                <h2>link memo</h2>
+                <!--검색창-->
+                <div id="serch">
+                    <div class="bar1">
+                        <a class="Google">Youtube</a>
+                        <form id="Google-serch">
+                            <input type="text" required />
+                        </form>
+                    </div>
+
+                    <div class="bar2">
+                        <a class="Naver">Naver</a>
+                        <form id="Naver-serch">
+                            <input type="text" required />
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="linkMemo">
+                    <form id="link-form">
+                        <input type="text" placeholder="input name of url and Enter" required />
+                        <input type="text" placeholder="input url and Enter" required />
+                        <input type="submit" value="submit" />
+                    </form>
+                    <ul id="link-list">
+                    </ul>
+                </div>
+
+                <div id="backchenge_all">
+                    <input id="backCheck" type="checkbox"><a>back Img hide</a></input>
+                    <form id="backColorForm">
+                        <input type="text" id="backColorInput" placeholder="input background #color"></input>
+                    </form>
+                </div>
+
+
+                <div class="Information">
+                    <a href="https://complete-bobcat-c24.notion.site/indexFinger-b496f030c56a46828b833531344b26a7">->
+                        info about the site </a>
+
+                </div>
+                <div class="Information2">
+                    <a href="https://www.notion.so/indexFinger-b496f030c56a46828b833531344b26a7">-> Image - Library of
+                        Lunia
+                        (by Project Moon)</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        const calenderForm = document.getElementById("calenderForm");
+        const calenderInput = document.querySelector("#calenderForm input");
+        const calenderList = document.getElementById("calender-list");
+
+        const calender_text = "calenderImfos";
+        let calenderImfos = [{ calenderAPI: "U2FsdGVkX1/dJDHBv1UqaIASl0NXbQ/ly491spwZ7P+M0wCoYbJ4mtHDnEp41c5Tn7TF2uMj7hSRXz8b+QwilY+3Oj1dxd5DgA+mPFcR7Wg=", calenderID: 1660473737960 }, { calenderAPI: "U2FsdGVkX1/dJDHBv1UqaIASl0NXbQ/ly491spwZ7P+M0wCoYbJ4mtHDnEp41c5Tn7TF2uMj7hSRXz8b+QwilY+3Oj1dxd5DgA+mPFcR7Wg=", calenderID: 1660473737960 }, { calenderAPI: "U2FsdGVkX1/dJDHBv1UqaIASl0NXbQ/ly491spwZ7P+M0wCoYbJ4mtHDnEp41c5Tn7TF2uMj7hSRXz8b+QwilY+3Oj1dxd5DgA+mPFcR7Wg=", calenderID: 1660473737960 }];
+        function savecalender() {
+            localStorage.setItem(calender_text, JSON.stringify(calenderImfos));
+        }
+
+        function deleteCalender(event) {
+            const li = event.target.parentElement; //리스트와 버튼을 연결
+            const child = li.childNodes[0];
+
+            calenderImfos = calenderImfos.filter(calenderImfo => calenderImfo.calenderID !== parseInt(child.id));
+
+            //calenderImfos = calenderImfos.filter(calender => calender.calenderID !== parseInt(child.id)); //지우고 싶은 item을 제외하고 저장함. 필터로 클릭하지 않은 id는 남겨두고 싶다.
+            li.remove();
+            savecalender()
+        }
+
+        function hideCalender(event) {
+            const target = event.target.parentElement;
+            const li = target.closest("li")
+            const liId = li.id;
+
+            const deleteText = /[^0-9]/g;
+            const onlyNumber = liId.replace(deleteText, "")
+            const linkindex = parseInt(onlyNumber);
+
+            const dayNow = Date.now();
+            const rewriteInput = "0";
+            const getData = JSON.parse(localStorage.getItem(calender_text));
+            const dataEE = window.CryptoJS.AES.encrypt(rewriteInput, `${dayNow}dexinnfigre167!`).toString();
+
+            getData[linkindex] = {
+                calenderAPI: dataEE,
+                calenderID: dayNow,
+            }
+            calenderImfos = getData;
+            savecalender();
+            location.reload();
+        }
+
+        function rewrteCalender(event) {
+
+            const target = event.target.parentElement;
+            const li = target.closest("li")
+            const liId = li.id;
+            const check = document.getElementById(liId);
+
+            const getData = JSON.parse(localStorage.getItem(calender_text));
+
+            const reForm = check.childNodes[1];
+            const rewriteInput = reForm.childNodes[0];
+
+            const rewriteclick = check.childNodes[2];
+            const rewriteChek = rewriteclick.childNodes[1].checked;
+
+            const deleteText = /[^0-9]/g;
+            const onlyNumber = liId.replace(deleteText, "")
+            const linkindex = parseInt(onlyNumber);
+
+            const dayNow = Date.now();
+            function submitRewriteCalender(event) {
+                const dataEE = window.CryptoJS.AES.encrypt(rewriteInput.value, `${dayNow}dexinnfigre167!`).toString();
+
+                getData[linkindex] = {
+                    calenderAPI: dataEE,
+                    calenderID: dayNow,
+                }
+                calenderImfos = getData;
+                localStorage.setItem(calender_text, JSON.stringify(calenderImfos));
+                rewriteChek.value = false;
+                console.log(getData[linkindex]);
+            }
+            reForm.addEventListener("submit", submitRewriteCalender);
+
+
+            switch (rewriteChek) {
+                case true:
+                    rewriteInput.style.display = "block";
+                    break;
+                case false:
+                    rewriteInput.style.display = "none";
+                    break;
+            }
+            savecalender();
+        }
+
+        let textCalender_i = 1;
+        let textCalenderLi_i = 0;
+
+        function paintCalender(newCalenderOb) {
+            const li = document.createElement("li");
+            li.id = `${textCalenderLi_i++}_calender`;;
+            const span = document.createElement("span");
+            span.innerText = `calender${textCalender_i++}`;
+            span.id = `${newCalenderOb.calenderID}`;
+
+            const button = document.createElement("button");
+            button.innerText = "x";
+            button.addEventListener("click", deleteCalender); //나중에 다시 추가
+
+            const hideButton = document.createElement("button");
+            hideButton.innerText = "hide";
+            hideButton.addEventListener("click", hideCalender);
+
+            const rewriteCalenderID_label = document.createElement("label");
+            rewriteCalenderID_label.innerText = "rewrite";
+
+            const rewriteCalender_check = document.createElement("input");
+            rewriteCalender_check.setAttribute("type", "checkbox");
+            rewriteCalender_check.style.display = "none";
+            rewriteCalender_check.addEventListener("click", rewrteCalender); //나중에 다시 추가
+
+            const rewriteCalender_input = document.createElement("input", "text");
+            rewriteCalender_input.style.display = "none";
+            const rewriteCalender_form = document.createElement("form");
+
+            rewriteCalenderID_label.appendChild(rewriteCalender_check);
+            rewriteCalender_form.appendChild(rewriteCalender_input);
+
+            li.appendChild(span);
+            li.appendChild(rewriteCalender_form);
+            li.appendChild(rewriteCalenderID_label);
+            li.appendChild(hideButton);
+            li.appendChild(button);
+            calenderList.appendChild(li);
+
+        }
+        function handleCalenderubmit(event) {
+
+            const newTodo = calenderInput.value;
+            const dayNow = Date.now();
+            const dataEE = window.CryptoJS.AES.encrypt(newTodo, `${dayNow}dexinnfigre167!`).toString();
+
+            calenderInput.value = "";
+            const newCalenderOb = {
+                calenderAPI: dataEE,
+                calenderID: dayNow,
+            };
+            calenderImfos.push(newCalenderOb);
+            paintCalender(newCalenderOb);
+            savecalender();
+        }
+        calenderForm.addEventListener("submit", handleCalenderubmit);
+
+        const GetsaveCalender = localStorage.getItem(calender_text);
+        const parsedCalender = JSON.parse(GetsaveCalender);
+
+        if (parsedCalender.length >= 3 && GetsaveCalender !== null) {
+            const parsedCalender = JSON.parse(GetsaveCalender);
+            calenderImfos = parsedCalender;
+            parsedCalender.forEach(paintCalender);
+        } else if (GetsaveCalender === null) {
+            const parsedCalender2 = calenderImfos;
+            calenderImfos = parsedCalender2;
+            calenderImfos.forEach(paintCalender);
+            savecalender();
+        }
+
+
+        /////////////////////////////////////////////////////////////////
+        const getData = JSON.parse(localStorage.getItem(calender_text));
+
+        const bytes1 = window.CryptoJS.AES.decrypt(getData[0].calenderAPI, `${getData[0].calenderID}dexinnfigre167!`);
+        const decrypt1 = bytes1.toString(window.CryptoJS.enc.Utf8);
+
+        const bytes2 = window.CryptoJS.AES.decrypt(getData[1].calenderAPI, `${getData[1].calenderID}dexinnfigre167!`);
+        const decrypt2 = bytes2.toString(window.CryptoJS.enc.Utf8);
+
+        const bytes3 = window.CryptoJS.AES.decrypt(getData[2].calenderAPI, `${getData[2].calenderID}dexinnfigre167!`);
+        const decrypt3 = bytes3.toString(window.CryptoJS.enc.Utf8);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                contentHeight: 500,
+                googleCalendarApiKey: 'AIzaSyBPomniaEFpdI98NVQIpyxJqtPzbN-bYoo',
+
+                eventSources: [{
+                    googleCalendarId: decrypt1,
+                    className: 'gcal-event', // an option!
+                    color: '#362222',
+                },
+                {
+                    googleCalendarId: decrypt2,
+                    className: 'gcal-event2', // an option!
+                    color: '#3b6978',
+                },
+                {
+                    googleCalendarId: decrypt3,
+                    className: 'gcal-event3', // an option!
+                    color: '#204051',
+                }],
+            });
+            calendar.render();
+        });
+    </script>
+
+    <script src="/javascript/backChange.js"></script>
+    <script src="/javascript/greetings.js"></script>
+    <script src="/javascript/clock.js"></script>
+    <script src="/javascript/quotes.js"></script>
+    <script src="/javascript/newTodo.js"></script>
+    <script src="/javascript/linkMemo.js"></script>
+    <script src="/javascript/timer.js"></script>
+
+    <script src="/javascript/serch.js"></script>
+
+</body>
+
+</html>
