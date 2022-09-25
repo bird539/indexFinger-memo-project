@@ -49,6 +49,7 @@ function deletCheckAllTodos(event){
         toDos = toDos.filter(toDo => toDo.textID !== parseInt(die[i]));
         saveToDos();
     }
+    location.reload();
 }
 
 deletCheckAllTodo.addEventListener("click", deletCheckAllTodos)
